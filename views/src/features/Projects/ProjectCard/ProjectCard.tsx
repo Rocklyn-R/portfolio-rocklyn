@@ -1,15 +1,5 @@
-import { DarkModeProps, Project } from "../../../types/types";
-import TaskMaster from "../../../images/TaskMaster.png";
+import { Project } from "../../../types/types";
 import { TechIcon } from "../..//Skills/TechIcon/TechIcon";
-import CSS3 from "../../../images/CSS3.png";
-import Javascript from "../../../images/Javascript.png";
-import Typescript from "../../../images/Typescript.png";
-import React from "../../../images/React.svg";
-import Redux from "../../../images/Redux.svg";
-import Tailwind from "../../../images/Tailwind.svg";
-import NodeJS from "../../../images/Node.svg";
-import Express from "../../../images/Express.svg";
-import Postgresql from "../../../images/Postgres.svg";
 
 interface ProjectCardProps {
     project: Project;
@@ -45,8 +35,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) =
 
             </div>
             <div className="w-full flex justify-evenly pt-2 self-end pb-4">
-                <button className={`px-3 py-2 ${darkMode ? 'border-customPinkLight' : 'hover:bg-customPinkMedium border-customPurpleLight'} rounded-sm border hover-scale`}>Live Demo</button>
-                <button className={`px-3 py-2  ${darkMode ? 'border border-customPinkLight' : 'hover:bg-customPurple bg-customPurpleLight'} rounded-sm text-customPinkLight hover-scale`}>Source Code</button>
+                <button className={`px-3 py-2 ${darkMode ? 'border-customPinkLight hover:bg-customDarkPurple' : 'hover:bg-customPinkMedium border-customPurpleLight'} rounded-sm border hover-scale`}>Live Demo</button>
+                <button className={`px-3 py-2  ${darkMode ? 'border border-customPinkLight hover:bg-customDarkPurple' : 'hover:bg-customPurple bg-customPurpleLight'} rounded-sm text-customPinkLight hover-scale`}>Source Code</button>
             </div>
 
         </div>

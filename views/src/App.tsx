@@ -5,6 +5,7 @@ import { Home } from './features/Home/Home';
 import { About } from './features/About/About';
 import { Skills } from './features/Skills/Skills';
 import { Projects } from './features/Projects/Projects';
+import { Contact } from './features/Contact/Contact';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <About darkMode={darkMode} />
       <Skills darkMode={darkMode} />
       <Projects darkMode={darkMode} />
+      <Contact darkMode={darkMode} />
     </div>
   );
 }

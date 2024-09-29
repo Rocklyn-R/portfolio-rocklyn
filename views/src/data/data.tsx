@@ -93,7 +93,7 @@ export const projects: Project[] = [
     {
         src: RedditLite,
         name: 'RedditLite',
-        title: "Reddit's most popular subreddits",
+        title: "Reddit's Most Popular Subreddits",
         description: "RedditLite is a read-only application that utilizes the Reddit API to display Reddit's most popular subreddits, their top posts, as well as their comments. Users can also search for their own subreddits.",
         techIcons: [
             techIcons[0], techIcons[1], techIcons[2], techIcons[3]

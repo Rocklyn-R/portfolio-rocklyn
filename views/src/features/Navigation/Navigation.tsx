@@ -11,8 +11,8 @@ export const Navigation: React.FC<DarkModeWithToggleProps> = ({darkMode, toggleD
         <ul className="space-x-16 text-customPink py-4">
             <li className="inline-flex hover:underline" id="home"><a>Home</a></li>
             <li className="inline-flex hover:underline" id="about"><a>About</a></li>
-            <li className="inline-flex hover:underline" id="projects"><a>Projects</a></li>
-            <li className="inline-flex hover:underline" id="skills"><a>Skills</a></li>
+            <li className="inline-flex hover:underline" id="projects"><a>Skills</a></li>
+            <li className="inline-flex hover:underline" id="skills"><a>Projects</a></li>
             <li className="inline-flex hover:underline" id="contact"><a>Contact</a></li>
         </ul>
     </nav>
