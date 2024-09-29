@@ -32,7 +32,7 @@ export const Skills: React.FC<DarkModeProps> = ({ darkMode }) => {
         <div className={`w-full py-20 space-y-10 flex flex-col items-center ${darkMode ? 'bg-customDarkPurple text-customPinkLight border-b border-customPinkLight' : 'bg-customPinkLight text-customPurple'} overflow-hidden`}>
             <h1 className="text-4xl font-bold pb-4">My Skills</h1>
             <div className="flex w-full justify-evenly text-2xl font-semibold">
-                <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-3xl' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
+                <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-md border-2 border-customPinkLight' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
                     <div className={`w-full flex flex-col items-center space-y-10 border-b-2 ${darkMode ? 'border-customPinkLight' : 'border-customPurple'} pb-10`}>
                         <img src={FrontEnd} width={100} />
                         <p>Front-End</p>
@@ -77,7 +77,7 @@ export const Skills: React.FC<DarkModeProps> = ({ darkMode }) => {
                         />
                     </div>
                 </div>
-                <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-3xl' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
+                <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-md border-2 border-customPinkLight' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
                     <div className={`w-full flex flex-col items-center space-y-10 border-b-2 ${darkMode ? 'border-customPinkLight' : 'border-customPurple'} pb-10`}>
                         <img src={BackEnd} width={100} />
                         <p>Back-End</p>
@@ -100,7 +100,7 @@ export const Skills: React.FC<DarkModeProps> = ({ darkMode }) => {
                         />
                     </div>
                 </div>
-                <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-3xl' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
+                <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-md border-2 border-customPinkLight' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
                     <div className={`w-full flex flex-col items-center space-y-10 border-b-2 ${darkMode ? 'border-customPinkLight' : 'border-customPurple'} pb-10`}>
                         <img src={Tools} width={100} />
                         <p>Tools</p>

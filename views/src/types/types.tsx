@@ -12,6 +12,7 @@ export interface Project {
     title: string;
     description: string;
     techIcons: TechIcon [];
+    demo: boolean;
 }
 
 export interface TechIcon {
