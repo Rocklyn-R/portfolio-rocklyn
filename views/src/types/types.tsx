@@ -21,3 +21,7 @@ export interface TechIcon {
     bgColor: string;
     blackFont?: boolean;
 }
+
+export interface BasicProps extends DarkModeProps {
+    ref: React.RefObject<HTMLDivElement>
+}

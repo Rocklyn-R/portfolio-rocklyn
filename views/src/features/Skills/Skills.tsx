@@ -22,14 +22,15 @@ import Jest from "../../images/Jest.svg";
 import Netlify from "../../images/Netlify.svg";
 import Postbird from "../../images/Postbird.svg";
 import { DarkModeProps } from "../../types/types";
+import { BasicProps } from "../../types/types";
+import { forwardRef } from "react";
 
-
-export const Skills: React.FC<DarkModeProps> = ({ darkMode }) => {
+export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) => {
 
 
 
     return (
-        <div className={`w-full py-20 space-y-10 flex flex-col items-center ${darkMode ? 'bg-customDarkPurple text-customPinkLight border-b border-customPinkLight' : 'bg-customPinkLight text-customPurple'} overflow-hidden`}>
+        <div ref={ref} className={`w-full py-20 space-y-10 flex flex-col items-center ${darkMode ? 'bg-customDarkPurple text-customPinkLight border-b border-customPinkLight' : 'bg-customPinkLight text-customPurple'} overflow-hidden`}>
             <h1 className="text-4xl font-bold pb-4">My Skills</h1>
             <div className="flex w-full justify-evenly text-2xl font-semibold">
                 <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-md border-2 border-customPinkLight' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
@@ -159,4 +160,4 @@ export const Skills: React.FC<DarkModeProps> = ({ darkMode }) => {
 
         </div>
     )
-}
+});

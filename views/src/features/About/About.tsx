@@ -1,10 +1,10 @@
 import RocklynPic from "../../images/AnticaPic.jpeg";
-import { useState, useRef, useEffect } from 'react';
-import { DarkModeProps } from "../../types/types";
+import { useState, useRef, useEffect, forwardRef } from 'react';
+import { BasicProps } from "../../types/types";
 
-export const About: React.FC<DarkModeProps> = ({darkMode}) => {
+
+export const About = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) => {
     const [isVisible, setIsVisible] = useState(false);
-    const aboutRef = useRef(null);
 
     const modeClassName = darkMode ? "dark" : "light";
 
@@ -18,21 +18,25 @@ export const About: React.FC<DarkModeProps> = ({darkMode}) => {
                     }
                 });
             },
-            { threshold: 0.5 } // Trigger when 20% of the element is visible
+            { threshold: 0.5 } // Trigger when 50% of the element is visible
         );
 
-        if (aboutRef.current) {
-            observer.observe(aboutRef.current);
+        // Ensure ref is defined and its current value is not null before observing
+        const currentRef = (ref as React.RefObject<HTMLDivElement>).current;
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (aboutRef.current) observer.unobserve(aboutRef.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
         };
-    }, []);
+    }, [ref]);
 
     return (
         <div
-            ref={aboutRef}
+        ref={ref}
             className={`w-full py-20 space-y-4 flex flex-col items-center overflow-hidden ${modeClassName}`}
         >
             <h1 className="text-4xl font-bold pb-4">About Me</h1>
@@ -66,4 +70,4 @@ export const About: React.FC<DarkModeProps> = ({darkMode}) => {
             </div>
         </div>
     );
-};
+});

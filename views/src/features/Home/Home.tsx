@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { forwardRef, useState, useEffect } from 'react';
 import RocklynPic from '../../images/AnticaPic.jpeg';
-import { DarkModeProps } from '../../types/types';
+import { BasicProps } from '../../types/types';
 
-export const Home: React.FC<DarkModeProps> = ({ darkMode }) => {
+export const Home = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) => {
     const [h3Visible, setH3Visible] = useState(false);
     const [buttonVisible, setButtonVisible] = useState(false);
 
@@ -26,7 +26,7 @@ export const Home: React.FC<DarkModeProps> = ({ darkMode }) => {
 
 
     return (
-        <div className={`w-full h-screen flex items-center justify-center overflow-hidden ${darkMode ? 'bg-customDarkPurple text-customPinkLight border-b border-customPinkLight' : 'bg-customPinkLight text-customPurple'}`}>
+        <div ref={ref} className={`w-full h-screen flex items-center justify-center overflow-hidden ${darkMode ? 'bg-customDarkPurple text-customPinkLight border-b border-customPinkLight' : 'bg-customPinkLight text-customPurple'}`}>
 
             <div className="flex items-center space-x-10 w-full justify-center">
 
@@ -73,4 +73,4 @@ export const Home: React.FC<DarkModeProps> = ({ darkMode }) => {
             </div>
         </div>
     );
-}
+});
