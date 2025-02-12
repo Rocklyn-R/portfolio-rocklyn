@@ -11,6 +11,8 @@ import Postgresql from "../images/Postgres.svg";
 import RhythmRealm from "../images/RhythmRealm.png";
 import RedditLite from "../images/RedditLite.png";
 import { Project } from "../types/types";
+import Netlify from "../images/Netlify.svg";
+import Render from "../images/Render.jpg";
 
 export const techIcons = [
     {
@@ -66,6 +68,18 @@ export const techIcons = [
         techText: 'Tailwind CSS',
         bgColor: 'bg-tailwindTurquoise',
         blackFont: false
+    },
+    {
+        techSrc: Netlify,
+        techText: 'Netlify',
+        bgColor: 'bg-netlifyGreen',
+        blackFont: false
+    },
+    {
+        techSrc: Render,
+        techText: 'Render',
+        bgColor: 'bg-black',
+        blackFont: false
     }]
 
 export const projects: Project[] = [
@@ -75,9 +89,11 @@ export const projects: Project[] = [
         title: 'E-Commerce Website for Musical Instruments',
         description: 'Rhythm Realm is an online store that allows buyers to log in, browse through multiple categories and subcategories of musical instruments, pick out products, add products to wish list, add them to cart and complete the purchase.',
         techIcons: [
-            techIcons[0], techIcons[7], techIcons[1], techIcons[2], techIcons[8], techIcons[4], techIcons[5], techIcons[6]
+            techIcons[0], techIcons[7], techIcons[1], techIcons[2], techIcons[8], techIcons[4], techIcons[5], techIcons[6], techIcons[10]
         ],
-        demo: true
+        demo: true,
+        liveDemo: 'https://rhythm-realm.onrender.com',
+        sourceCode: 'https://github.com/Rocklyn-R/rhythm-realm'
     },
     {
         src: TaskMaster,
@@ -86,9 +102,11 @@ export const projects: Project[] = [
         description: 'TaskMaster is a productivity app that gamifies completing tasks. It features a to-do list with a coin reward system and custom rewards as well as a pomodoro focus timer that allows you to sell pomodoros for coins.',
         techIcons: [
             techIcons[0], techIcons[7], techIcons[1],
-            techIcons[2], techIcons[3], techIcons[4], techIcons[5], techIcons[6]
+            techIcons[2], techIcons[3], techIcons[4], techIcons[5], techIcons[6], techIcons[10]
         ],
-        demo: true
+        demo: true,
+        liveDemo: 'https://task-master-rocklyn.onrender.com/',
+        sourceCode: 'https://github.com/Rocklyn-R/gamified-productivity-app'
     },
     {
         src: RedditLite,
@@ -96,8 +114,10 @@ export const projects: Project[] = [
         title: "Reddit's Most Popular Subreddits",
         description: "RedditLite is a read-only application that utilizes the Reddit API to display Reddit's most popular subreddits, their top posts, as well as their comments. Users can also search for their own subreddits.",
         techIcons: [
-            techIcons[0], techIcons[1], techIcons[2], techIcons[3]
+            techIcons[0], techIcons[1], techIcons[2], techIcons[3], techIcons[9]
         ],
-        demo: false
+        demo: false,
+        liveDemo: 'https://rocklyn-reddit-app-af0943.netlify.app/',
+        sourceCode: 'https://github.com/Rocklyn-R/reddit-app'
     }
 ]

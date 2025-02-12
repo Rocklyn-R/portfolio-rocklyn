@@ -111,20 +111,9 @@ input:checked[type="checkbox"]:before {
     border-bottom: solid 1px #c897d8;
   }
   
-  .dark a:visited {
-    color: #c897d8;
-  }
-  
-  .dark .project h3 {
-    color: #c897d8;
-    border-bottom: 1px solid #c897d8;
-  }
-  
-  .dark .box-container img {
-    border: solid 1px #c897d8;
-  }
 
   .light {
     background-color: #333159;
     color: #c897d8;
 }
+

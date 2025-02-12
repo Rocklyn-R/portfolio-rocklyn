@@ -35,8 +35,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) =
 
             </div>
             <div className="w-full flex justify-evenly pt-2 self-end pb-4">
-                <button className={`px-3 py-2 ${darkMode ? 'border-customPinkLight hover:bg-customDarkPurple' : 'hover:bg-customPinkMedium border-customPurpleLight'} rounded-sm border hover-scale`}>Live Demo</button>
-                <button className={`px-3 py-2  ${darkMode ? 'border border-customPinkLight hover:bg-customDarkPurple' : 'hover:bg-customPurple bg-customPurpleLight'} rounded-sm text-customPinkLight hover-scale`}>Source Code</button>
+                <a 
+                href={project.liveDemo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`cursor-pointer px-3 py-2 ${darkMode ? 'border-customPinkLight hover:bg-customDarkPurple' : 'hover:bg-customPinkMedium border-customPurpleLight text-customPurple'} rounded-sm border hover-scale`}
+                >Live Demo</a>
+                <a 
+                href={project.sourceCode}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`cursor-pointer px-3 py-2  ${darkMode ? 'border border-customPinkLight hover:bg-customDarkPurple' : 'hover:bg-customPurple bg-customPurpleLight'} rounded-sm text-customPinkLight hover-scale`}
+                >Source Code</a>
             </div>
 
         </div>

@@ -21,9 +21,9 @@ import Webpack from "../../images/Webpack.svg";
 import Jest from "../../images/Jest.svg";
 import Netlify from "../../images/Netlify.svg";
 import Postbird from "../../images/Postbird.svg";
-import { DarkModeProps } from "../../types/types";
 import { BasicProps } from "../../types/types";
 import { forwardRef } from "react";
+import Render from "../../images/Render.jpg";
 
 export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) => {
 
@@ -35,7 +35,7 @@ export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref)
             <div className="flex w-full justify-evenly text-2xl font-semibold">
                 <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-md border-2 border-customPinkLight' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
                     <div className={`w-full flex flex-col items-center space-y-10 border-b-2 ${darkMode ? 'border-customPinkLight' : 'border-customPurple'} pb-10`}>
-                        <img src={FrontEnd} width={100} />
+                        <img src={FrontEnd} width={100} alt="front-end" />
                         <p>Front-End</p>
                     </div>
                     <div className="flex items-center flex-wrap gap-2" id="front-end-skills">
@@ -80,7 +80,7 @@ export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref)
                 </div>
                 <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-md border-2 border-customPinkLight' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
                     <div className={`w-full flex flex-col items-center space-y-10 border-b-2 ${darkMode ? 'border-customPinkLight' : 'border-customPurple'} pb-10`}>
-                        <img src={BackEnd} width={100} />
+                        <img src={BackEnd} width={100} alt="back-end" />
                         <p>Back-End</p>
                     </div>
                     <div className="flex items-center flex-wrap gap-2" id="back-end-skills">
@@ -103,7 +103,7 @@ export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref)
                 </div>
                 <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-md border-2 border-customPinkLight' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
                     <div className={`w-full flex flex-col items-center space-y-10 border-b-2 ${darkMode ? 'border-customPinkLight' : 'border-customPurple'} pb-10`}>
-                        <img src={Tools} width={100} />
+                        <img src={Tools} width={100} alt="tools" />
                         <p>Tools</p>
                     </div>
                     <div className="flex items-center flex-wrap gap-2">
@@ -152,6 +152,11 @@ export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref)
                             techSrc={Jest}
                             techText="Jest"
                             bgColor="bg-jestRed"
+                        />
+                        <TechIcon 
+                            techSrc={Render}
+                            techText="Render"
+                            bgColor="bg-black"
                         />
                     </div>
                 </div>
