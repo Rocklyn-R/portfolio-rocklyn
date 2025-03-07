@@ -24,21 +24,61 @@ import Postbird from "../../images/Postbird.svg";
 import { BasicProps } from "../../types/types";
 import { forwardRef } from "react";
 import Render from "../../images/Render.jpg";
+import { useState, useRef, useEffect } from "react";
 
 export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) => {
 
+    const [inViewFrontEnd, setInViewFrontEnd] = useState(false);
+    const [inViewBackEnd, setInViewBackEnd] = useState(false);
+    const [inViewTools, setInViewTools] = useState(false);
 
+    // Refs for each section
+    const frontEndRef = useRef<HTMLDivElement>(null);
+    const backEndRef = useRef<HTMLDivElement>(null);
+    const toolsRef = useRef<HTMLDivElement>(null);
+
+    // Intersection Observer callback
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // When the section is in view, set the state to true
+                if (entry.target === frontEndRef.current) {
+                    setInViewFrontEnd(true);
+                } else if (entry.target === backEndRef.current) {
+                    setInViewBackEnd(true);
+                } else if (entry.target === toolsRef.current) {
+                    setInViewTools(true);
+                }
+            }
+        });
+    };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(handleIntersection, {
+            threshold: 0.5, // trigger when 50% of the section is in view
+        });
+
+        // Observe each section
+        if (frontEndRef.current) observer.observe(frontEndRef.current);
+        if (backEndRef.current) observer.observe(backEndRef.current);
+        if (toolsRef.current) observer.observe(toolsRef.current);
+
+        return () => {
+            // Clean up the observer on unmount
+            observer.disconnect();
+        };
+    }, []);
 
     return (
-        <div ref={ref} className={`w-full py-20 space-y-10 flex flex-col items-center ${darkMode ? 'bg-customDarkPurple text-customPinkLight border-b border-customPinkLight' : 'bg-customPinkLight text-customPurple'} overflow-hidden`}>
+        <div ref={ref} className={`dark:border-t dark:border-customPink w-full py-20 space-y-10 flex flex-col items-center dark:bg-customDarkPurple dark:text-customPinkLight dar:border-b bg-customPinkLight text-customPurple overflow-hidden`}>
             <h1 className="text-4xl font-bold pb-4">My Skills</h1>
-            <div className="flex w-full justify-evenly text-2xl font-semibold">
-                <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-md border-2 border-customPinkLight' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
-                    <div className={`w-full flex flex-col items-center space-y-10 border-b-2 ${darkMode ? 'border-customPinkLight' : 'border-customPurple'} pb-10`}>
+            <div className="flex w-full sm:justify-evenly justify-center text-2xl font-semibold flex-col sm:flex-row space-y-8 sm:space-y-0 sm:space-x-4 sm:px-4 xs:px-8 px-4">
+                <div ref={frontEndRef} className={`p-4 dark:bg-customPurple dark:rounded-md dark:border dark:border-customPink ${inViewFrontEnd ? 'sm:animate-slideInLeft fade-in' : 'opacity-0'} flex flex-col items-center lg:w-1/4 md:w-1/3 sm:w-1/3 sm:mx-0 space-y-10`}>
+                    <div className={`w-full flex flex-col items-center space-y-10 border-b ${darkMode ? 'border-customPink' : 'border-customPurple'} pb-10`}>
                         <img src={FrontEnd} width={100} alt="front-end" />
                         <p>Front-End</p>
                     </div>
-                    <div className="flex items-center flex-wrap gap-2" id="front-end-skills">
+                    <div className="flex items-center flex-wrap justify-center gap-2" id="front-end-skills">
                         <TechIcon
                             techSrc={Html5}
                             techText="HTML5"
@@ -78,12 +118,12 @@ export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref)
                         />
                     </div>
                 </div>
-                <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-md border-2 border-customPinkLight' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
-                    <div className={`w-full flex flex-col items-center space-y-10 border-b-2 ${darkMode ? 'border-customPinkLight' : 'border-customPurple'} pb-10`}>
+                <div ref={backEndRef} className={`p-4 ${darkMode ? 'bg-customPurple  rounded-md border border-customPink' : ''} ${inViewBackEnd ? 'fade-in' : 'opacity-0'} flex flex-col items-center lg:w-1/4 md:w-1/3 sm:w-1/3 sm:mx-0 space-y-10`}>
+                    <div className={`w-full flex flex-col items-center space-y-10 border-b ${darkMode ? 'border-customPink' : 'border-customPurple'} pb-10`}>
                         <img src={BackEnd} width={100} alt="back-end" />
                         <p>Back-End</p>
                     </div>
-                    <div className="flex items-center flex-wrap gap-2" id="back-end-skills">
+                    <div className="flex items-center flex-wrap gap-2 justify-center" id="back-end-skills">
                         <TechIcon
                             techSrc={NodeJS}
                             techText="Node.js"
@@ -101,12 +141,12 @@ export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref)
                         />
                     </div>
                 </div>
-                <div className={`p-4 ${darkMode ? 'bg-customPurple  rounded-md border-2 border-customPinkLight' : ''} animate-slideInLeft flex flex-col items-center w-1/5 space-y-10`}>
-                    <div className={`w-full flex flex-col items-center space-y-10 border-b-2 ${darkMode ? 'border-customPinkLight' : 'border-customPurple'} pb-10`}>
+                <div ref={toolsRef} className={`p-4 ${darkMode ? 'bg-customPurple rounded-md border border-customPink' : ''} ${inViewTools ? 'sm:animate-slideInRight fade-in' : 'opacity-0'} flex flex-col items-center lg:w-1/4 md:w-1/3 sm:w-1/3 sm:mx-0  space-y-10`}>
+                    <div className={`w-full flex flex-col items-center space-y-10 border-b ${darkMode ? 'border-customPink' : 'border-customPurple'} pb-10`}>
                         <img src={Tools} width={100} alt="tools" />
                         <p>Tools</p>
                     </div>
-                    <div className="flex items-center flex-wrap gap-2">
+                    <div className="flex items-center flex-wrap gap-2 justify-center">
                         <TechIcon
                             techSrc={Git}
                             techText="Git"
@@ -153,16 +193,14 @@ export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref)
                             techText="Jest"
                             bgColor="bg-jestRed"
                         />
-                        <TechIcon 
+                        <TechIcon
                             techSrc={Render}
                             techText="Render"
                             bgColor="bg-black"
                         />
                     </div>
                 </div>
-
             </div>
-
         </div>
     )
 });

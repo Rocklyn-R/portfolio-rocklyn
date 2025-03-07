@@ -6,7 +6,7 @@ import { BasicProps } from "../../types/types";
 export const About = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) => {
     const [isVisible, setIsVisible] = useState(false);
 
-    const modeClassName = darkMode ? "dark" : "light";
+
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -37,18 +37,18 @@ export const About = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) 
     return (
         <div
         ref={ref}
-            className={`w-full py-20 space-y-4 flex flex-col items-center overflow-hidden ${modeClassName}`}
+            className={`bg-customPurple dark:bg-customDarkPurple text-customPink w-full py-20 space-y-4 flex flex-col items-center overflow-hidden `}
         >
             <h1 className="text-4xl font-bold pb-4">About Me</h1>
-            <div className="flex items-center space-x-6 justify-center">
+            <div className="flex flex-col md:flex-row items-center md:space-x-6 justify-center">
                 <div
-                    className={`w-64 h-64 rounded-full shadow-lg object-cover transition-all duration-1000 ${isVisible ? "animate-slideInLeft" : "opacity-0"
+                    className={`rounded-full shadow-lg object-cover transition-all duration-1000 ${isVisible ? "animate-slideInLeft" : "opacity-0"
                         }`}
                 >
                     <img className="w-64 h-64 rounded-full shadow-lg object-cover" src={RocklynPic} />
                 </div>
                 <div
-                    className={`w-1/2 space-y-4 rounded-md p-4 transition-all duration-1000 ${isVisible ? "animate-slideInRight" : "opacity-0"
+                    className={`md:w-1/2 mx-4 md:text-left text-center space-y-4 rounded-md p-4 transition-all duration-1000 ${isVisible ? "animate-slideInRight" : "opacity-0"
                         }`}
                 >
                     <p>

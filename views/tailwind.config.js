@@ -6,6 +6,7 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      darkMode: 'class',
       fontSize: {
         'sm-md': '0.9375rem', // This is 15px
       },
@@ -26,6 +27,9 @@ module.exports = {
       animation: {
         slideInLeft: 'slideInLeft 1.5s ease-out',
         slideInRight: 'slideInRight 1.5s ease-out',
+      },
+      screens: {
+        xs: {'min-width': '375px'}
       },
       colors: {
         customPurple: '#333159',

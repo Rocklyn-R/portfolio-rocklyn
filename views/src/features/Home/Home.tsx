@@ -1,75 +1,124 @@
-import { forwardRef, useState, useEffect } from 'react';
+import { forwardRef, useState, useEffect, useRef } from 'react';
 import RocklynPic from '../../images/AnticaPic.jpeg';
 import { BasicProps } from '../../types/types';
+import bg1 from "../../images/Backgrounds/bg1.jpg"
 
-export const Home = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) => {
-    const [h3Visible, setH3Visible] = useState(false);
-    const [buttonVisible, setButtonVisible] = useState(false);
+interface HomeProps {
+    onNavClick: (ref: React.RefObject<HTMLDivElement>) => void;
+    projectsRef: React.RefObject<HTMLDivElement>;
+    contactRef: React.RefObject<HTMLDivElement>;
+}
 
-    const modeClassName = darkMode ? "dark" : "light";
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setButtonVisible(true)
-        }, 300);
-        return () => clearTimeout(timer);
-    }, [])
+export const Home = forwardRef<HTMLDivElement, HomeProps>(({ onNavClick, projectsRef, contactRef }, ref) => {
+    const text = "Hi, I'm Rocklyn";
+    const [letters, setLetters] = useState<string[]>([]);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setH3Visible(true); // Set h3 to visible after 1.5 seconds
-        }, 500); // Adjust the delay as needed for your animation timing
-
-        return () => clearTimeout(timer); // Cleanup the timer on unmount
+        setLetters(text.split(""));
     }, []);
 
 
+    /*  useEffect(() => {
+           const timer = setTimeout(() => {
+               setButtonVisible(true)
+           }, 300);
+           return () => clearTimeout(timer);
+       }, [])*/
+
+
+    const [inView, setInView] = useState(false);
+    const [inViewDescriptor, setInViewDescriptor] = useState(false);
+    const [inViewButtons, setInViewButtons] = useState(false);
+
+    // Refs for each section
+    const homeRef = useRef<HTMLDivElement>(null);
+
+    // Intersection Observer callback
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // When the section is in view, set the state to true
+                if (entry.target === homeRef.current) {
+                    setInView(true);
+                    setTimeout(() => {
+                        setInViewDescriptor(true)
+                    }, 1000)
+                    setTimeout(() => {
+                        setInViewButtons(true);
+                    }, 1400)
+                }
+            }
+        });
+    };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(handleIntersection, {
+            threshold: 0.5, // trigger when 50% of the section is in view
+        });
+
+        // Observe each section
+        if (homeRef.current) observer.observe(homeRef.current);
+
+        return () => {
+            // Clean up the observer on unmount
+            observer.disconnect();
+        };
+    }, []);
+
 
     return (
-        <div ref={ref} className={`w-full h-screen flex items-center justify-center overflow-hidden ${darkMode ? 'bg-customDarkPurple text-customPinkLight border-b border-customPinkLight' : 'bg-customPinkLight text-customPurple'}`}>
+        <div
+            ref={homeRef}
+            className={`bg-customPinkLight dark:bg-customDarkPurple w-full h-screen flex items-center justify-center overflow-hidden dark:text-customPinkLight dark:border-b dark:border-customPink text-customPurple`}>
 
-            <div className="flex items-center space-x-10 w-full justify-center">
+            <div className="flex flex-col items-center  w-full justify-center">
 
+                <div className={`${inView ? "fade-in-scale-up" : "opacity-0"} flex justify-center`}>
+                    <img
+                        src={RocklynPic}
+                        alt="Antica Rocklyn"
+                        className="rounded-full shadow-lg object-cover w-3/4 sm:w-[330px] max-w-[330px] h-auto"
+                    />
 
-                <div className="text-left flex flex-col space-y-4">
-                    <h1 className="text-6xl font-bold fade-in">
-                        Hi, I'm Rocklyn!
+                </div>
+                <div className="text-center flex flex-col space-y-4 mt-4">
+                    <h1 className="sm:text-6xl xs:text-5xl text-4xl font-bold">
+                        {letters.map((letter, index) => (
+                            <span
+                                key={index}
+                                className={`${inView ? "slide-in-letter" : "opacity-0"}`}
+                                style={{
+                                    animationDelay: `${index * 0.1}s`, // Delay each letter a bit
+                                }}
+                            >
+                                {letter === " " ? "\u00A0" : letter} {/* Ensure space is rendered */}
+                            </span>
+                        ))}
                     </h1>
 
-                    <h3 className={`text-xl ${h3Visible ? 'visible' : 'invisible'} fade-in`}
-                        style={{ animationDelay: '.45s' }} >
+                    <h3 className={`${inViewDescriptor ? "fade-in" : "opacity-0"} text-xl mx-4`} >
                         I'm a Full Stack Web Developer based in Ashburn, Virginia.
                     </h3>
 
-                    <div className='flex space-x-6 text-xl'>
-                        <div className='slide-in'>
-                            <button
-                                className={`px-3 py-2 ${darkMode ? 'border-customPinkLight' : 'hover:bg-customPinkMedium border-customPurpleLight'} rounded-sm border hover-scale`}
-                            >
-                                About Me
-                            </button>
-                        </div>
-                        {buttonVisible && (
-                            <div className='slide-in'>
-                                <button
-                                    className={`px-3 py-2  ${darkMode ? 'border border-customPinkLight' : 'hover:bg-customPurple bg-customPurpleLight'} rounded-sm text-customPinkLight hover-scale`}
-                                >
-                                    Hire Me
-                                </button>
-                            </div>
+                    <div className={`${inViewButtons ? "fade-in" : "opacity-0"} flex justify-center space-x-6 text-xl`}>
 
-                        )}
+                        <button
+                            onClick={() => onNavClick(projectsRef)}
+                            className={`px-3 py-2 w-28 dark:border dark:border-customPink hover:bg-customPinkMedium border-customPurpleLight rounded-sm border hover-scale`}
+                        >
+                            Projects
+                        </button>
+
+                        <button
+                            onClick={() => onNavClick(contactRef)}
+                            className={`px-3 py-2 w-28 dark:border dark:border-customPink hover:bg-customPurple bg-customPurpleLight rounded-sm text-customPinkLight hover-scale`}
+                        >
+                            Hire Me
+                        </button>
 
                     </div>
                 </div>
-                <div className="animate-slideInRight">
-                    <img
-                        width={400}
-                        src={RocklynPic}
-                        alt="Antica Rocklyn"
-                        className="rounded-full shadow-lg object-cover"
-                    />
-                </div>
+
             </div>
         </div>
     );

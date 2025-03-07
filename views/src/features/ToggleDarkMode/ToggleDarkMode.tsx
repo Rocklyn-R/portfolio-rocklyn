@@ -21,13 +21,14 @@ export const ToggleDarkMode: React.FC<DarkModeWithToggleProps> = ({ darkMode, to
     }, [isChecked, toggleDarkMode]);
 
     return (
-        <div className="toggle-button" id="toggle">
+        <button className="toggle-button" id="toggle">
             <input
                 type="checkbox"
                 name=""
+                className="cursor-pointer"
                 checked={isChecked}
                 onChange={handleChange}
             />
-        </div>
+        </button>
     )
 }
