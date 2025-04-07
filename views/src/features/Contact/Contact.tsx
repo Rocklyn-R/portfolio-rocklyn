@@ -123,6 +123,7 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
                                 value={name}
                                 onChange={setName}
                                 maxLength={70}
+                                required
                             />
 
                             <CustomTextInput
@@ -131,6 +132,7 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
                                 value={email}
                                 onChange={setEmail}
                                 maxLength={70}
+                                required
                             />
 
                             <CustomTextInput
@@ -140,6 +142,7 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
                                 onChange={setPhone}
                                 validateFunction={validatePhone}
                                 maxLength={70}
+                                required
                             />
 
                             <CustomTextArea
@@ -148,6 +151,7 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
                                 value={message}
                                 onChange={setMessage}
                                 maxLength={500}
+                                required
                             />
 
                             <CustomSelect
