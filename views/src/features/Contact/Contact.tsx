@@ -95,7 +95,7 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
                         name="LinkedIn"
                         phrase="Let's connect."
                         darkMode={darkMode}
-                        href=""
+                        href="https://www.linkedin.com/in/antica-rocklyn-rusinovic"
                     />
                 </div>
                 <div>

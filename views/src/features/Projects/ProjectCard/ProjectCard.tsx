@@ -37,7 +37,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ index, project, darkMo
                 ? "lg:fade-in md:animate-slideInRight fade-in"
                 : index === 2
                     ? "lg:animate-slideInRight md:animate-slideInLeft fade-in"
-                    : ""
+                    : "lg:animate-slideInLeft md:animate-slideInLeft fade-in"
         : "opacity-0"; // Ensure it starts hidden
 
 
