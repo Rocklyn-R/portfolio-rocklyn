@@ -104,14 +104,14 @@ export const Home = forwardRef<HTMLDivElement, HomeProps>(({ onNavClick, project
 
                         <button
                             onClick={() => onNavClick(projectsRef)}
-                            className={`px-3 py-2 w-28 dark:border dark:border-customPink hover:bg-customPinkMedium border-customPurpleLight rounded-sm border hover-scale`}
+                            className={`px-3 py-2 w-28 dark:border dark:border-customPink dark:hover:bg-customPurple hover:bg-customPinkMedium border-customPurpleLight rounded-sm border hover-scale`}
                         >
                             Projects
                         </button>
 
                         <button
                             onClick={() => onNavClick(contactRef)}
-                            className={`px-3 py-2 w-28 dark:border dark:border-customPink hover:bg-customPurple bg-customPurpleLight rounded-sm text-customPinkLight hover-scale`}
+                            className={`px-3 py-2 w-28 dark:border dark:border-customPink dark:bg-customDarkPurple dark:hover:bg-customPurple hover:bg-customPurple bg-customPurpleLight rounded-sm text-customPinkLight hover-scale`}
                         >
                             Hire Me
                         </button>
