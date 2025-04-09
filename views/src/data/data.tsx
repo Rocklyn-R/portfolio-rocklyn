@@ -115,7 +115,7 @@ export const projects: Project[] = [
         title: 'Strength Training Tracker',
         description: 'Lift Log is a strength training gym application that allows users to log their workouts and track their personal records. It also features a timer and stopwatch',
         techIcons: [
-            techIcons[0], techIcons[7], techIcons[1], techIcons[2], techIcons[8], techIcons[4], techIcons[5], techIcons[6], techIcons[10]
+            techIcons[7], techIcons[1], techIcons[2], techIcons[8], techIcons[4], techIcons[5], techIcons[6], techIcons[10]
         ],
         demo: true,
         liveDemo: 'https://lift-log.onrender.com/',
