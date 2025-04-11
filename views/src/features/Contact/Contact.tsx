@@ -9,6 +9,7 @@ import { CustomTextArea } from "../../components/CustomTextArea";
 import { CustomSelect } from "../../components/CustomSelect";
 import emailjs from "emailjs-com";
 import { Loading } from "../../components/Loading";
+import { Header } from "../../components/Header";
 
 
 
@@ -77,8 +78,8 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
 
 
     return (
-        <div ref={ref} className={`w-full py-20 flex flex-col items-center ${darkMode ? 'bg-customDarkPurple text-customPinkLight' : 'bg-customPinkLight text-customPurple'} overflow-hidden`}>
-            <h1 className="text-4xl font-bold pb-4">Contact Me</h1>
+        <div ref={ref} className={`w-full py-10 flex flex-col items-center ${darkMode ? 'bg-customDarkPurple text-customPinkLight' : 'bg-customPurple text-customPink'} overflow-hidden`}>
+            <Header text="Contact" />
             <div className="flex items-center justify-evenly flex-wrap gap-y-4 w-full lg:w-3/4 ">
                 <div>
                     <SocialMedia
@@ -109,10 +110,10 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
                 </div>
 
             </div>
-            <div className="w-full flex flex-col items-center justify-center xs:px-4 px-1 py-10 ">
+            <div className="w-full flex flex-col items-center justify-center xs:px-4 px-1 pt-10">
 
-                    <form onSubmit={handleSubmitContactForm} className="w-full max-w-lg p-8 dark:border dark:border-customPink bg-customPurpleLight rounded-lg shadow-md">
-                        <h4 className="text-customPinkLight text-2xl mb-6 font-bold text-center">
+                    <form onSubmit={handleSubmitContactForm} className="w-full max-w-lg p-8 dark:border dark:border-customPink bg-customPinkLight dark:bg-customPurple rounded-lg shadow-md">
+                        <h4 className="text-customPurple dark:text-customPinkLight text-2xl mb-6 font-bold text-center">
                             Send Me a Message:
                         </h4>
 
@@ -163,9 +164,9 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
 
                         </div>
 
-                        <div className="mt-6 text-center">
+                        <div className="mt-6 text-center w-full flex justify-center">
                             <button
-                                className="w-full flex justify-center py-3 bg-customPinkLight text-customPurple font-bold rounded-md hover:bg-customPinkMedium transition duration-300"
+                                className="w-fit text-lg border border-customPinkLight flex justify-center px-3 py-2 bg-customPurpleLight dark:hover:bg-customDarkPurple dark:bg-customPurple text-customPinkLight font-semibold rounded-md hover:bg-customPurple transition duration-300 hover-scale"
                                 type="submit"
                             >
                                {loading ? <Loading size="w-6 h-6" /> : "Submit"}

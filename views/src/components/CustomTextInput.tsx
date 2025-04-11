@@ -29,14 +29,13 @@ export const CustomTextInput: React.FC<CustomTextInputProps> = ({ validateFuncti
 
   return (
     <div className="relative flex items-center justify-center w-full">
-      {/* Input Field */}
       <input
         type="text"
         placeholder={placeholder}
         name={name}
         value={value}
         onChange={handleChange}
-        className={`${className} text-customPurple mt-2 p-2 border-2 border-customPinkMedium focus:outline-none rounded-md`}
+        className={`${className} text-customPurple mt-2 p-2 border-2 border-customPurple focus:outline-none rounded-md`}
         required={required}
       />
     </div>

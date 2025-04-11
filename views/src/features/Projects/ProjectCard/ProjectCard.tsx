@@ -75,13 +75,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ index, project, darkMo
                     href={project.liveDemo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`cursor-pointer px-3 py-2 ${darkMode ? 'border-customPink hover:bg-customDarkPurple' : 'hover:bg-customPinkMedium border-customPurpleLight text-customPurple'} rounded-sm border hover-scale`}
+                    className={`rounded-md cursor-pointer px-3 py-2 ${darkMode ? 'border-customPink hover:bg-customDarkPurple' : 'hover:bg-customPinkMedium border-customPurpleLight text-customPurple'} border hover-scale`}
                 >Live Demo</a>
                 <a
                     href={project.sourceCode}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`cursor-pointer px-3 py-2  ${darkMode ? 'border border-customPink hover:bg-customDarkPurple' : 'hover:bg-customPurple bg-customPurpleLight'} rounded-sm text-customPinkLight hover-scale`}
+                    className={`rounded-md cursor-pointer px-3 py-2  ${darkMode ? 'border border-customPink hover:bg-customDarkPurple' : 'hover:bg-customPurple bg-customPurpleLight'} text-customPinkLight hover-scale`}
                 >Source Code</a>
             </div>
 

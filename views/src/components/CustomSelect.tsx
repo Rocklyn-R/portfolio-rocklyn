@@ -50,7 +50,7 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
             />
 
             <div
-                className={`${isOpen ? " border-2 border-customPink text-customPurple rounded-t-md" : "rounded-md border-2 border-customPink"} ${value !== "Select reason" ? "text-customPurple" : "text-gray-400"
+                className={`${isOpen ? " border-2 border-customPurple text-customPurple rounded-t-md" : "rounded-md border-2 border-customPurple"} ${value !== "Select reason" ? "text-customPurple" : "text-gray-400"
                     } p-2 w-full bg-white cursor-pointer `}
                 onClick={() => setIsOpen(!isOpen)}
             >
@@ -70,7 +70,7 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
             </div>
 
             {isOpen && (
-                <div className={`text-customPurple absolute z-10 -mt-1 w-full bg-white border-b-2 border-x-2 border-customPink rounded-b-md shadow-lg max-h-[25vh] overflow-y-auto`}>
+                <div className={`text-customPurple absolute z-10 -mt-1 w-full bg-white border-b-2 border-x-2 border-customPurple rounded-b-md shadow-lg max-h-[25vh] overflow-y-auto`}>
                     {options.map((option, index) => (
                         <div
                             key={index}

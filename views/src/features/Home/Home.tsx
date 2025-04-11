@@ -7,9 +7,10 @@ interface HomeProps {
     onNavClick: (ref: React.RefObject<HTMLDivElement>) => void;
     projectsRef: React.RefObject<HTMLDivElement>;
     contactRef: React.RefObject<HTMLDivElement>;
+    homeRef: React.RefObject<HTMLDivElement>;
 }
 
-export const Home = forwardRef<HTMLDivElement, HomeProps>(({ onNavClick, projectsRef, contactRef }, ref) => {
+export const Home = forwardRef<HTMLDivElement, HomeProps>(({ onNavClick, projectsRef, contactRef, homeRef }) => {
     const text = "Hi, I'm Rocklyn";
     const [letters, setLetters] = useState<string[]>([]);
 
@@ -30,8 +31,6 @@ export const Home = forwardRef<HTMLDivElement, HomeProps>(({ onNavClick, project
     const [inViewDescriptor, setInViewDescriptor] = useState(false);
     const [inViewButtons, setInViewButtons] = useState(false);
 
-    // Refs for each section
-    const homeRef = useRef<HTMLDivElement>(null);
 
     // Intersection Observer callback
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -69,7 +68,7 @@ export const Home = forwardRef<HTMLDivElement, HomeProps>(({ onNavClick, project
     return (
         <div
             ref={homeRef}
-            className={`bg-customPinkLight dark:bg-customDarkPurple w-full h-screen flex items-center justify-center overflow-hidden dark:text-customPinkLight dark:border-b dark:border-customPink text-customPurple`}>
+            className={`pt-10 bg-customPinkLight dark:bg-customDarkPurple w-full h-screen flex items-center justify-center overflow-hidden dark:text-customPinkLight dark:border-b dark:border-customPink text-customPurple`}>
 
             <div className="flex flex-col items-center  w-full justify-center">
 
@@ -104,14 +103,14 @@ export const Home = forwardRef<HTMLDivElement, HomeProps>(({ onNavClick, project
 
                         <button
                             onClick={() => onNavClick(projectsRef)}
-                            className={`px-3 py-2 w-28 dark:border dark:border-customPink dark:hover:bg-customPurple hover:bg-customPinkMedium border-customPurpleLight rounded-sm border hover-scale`}
+                            className={`px-3 py-2 w-28 dark:border dark:border-customPink dark:hover:bg-customPurple hover:bg-customPinkMedium border-customPurpleLight rounded-md border hover-scale`}
                         >
                             Projects
                         </button>
 
                         <button
                             onClick={() => onNavClick(contactRef)}
-                            className={`px-3 py-2 w-28 dark:border dark:border-customPink dark:bg-customDarkPurple dark:hover:bg-customPurple hover:bg-customPurple bg-customPurpleLight rounded-sm text-customPinkLight hover-scale`}
+                            className={`px-3 py-2 w-28 dark:border dark:border-customPink dark:bg-customDarkPurple dark:hover:bg-customPurple hover:bg-customPurple bg-customPurpleLight rounded-md text-customPinkLight hover-scale`}
                         >
                             Hire Me
                         </button>

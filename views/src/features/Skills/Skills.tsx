@@ -25,6 +25,7 @@ import { BasicProps } from "../../types/types";
 import { forwardRef } from "react";
 import Render from "../../images/Render.jpg";
 import { useState, useRef, useEffect } from "react";
+import { Header } from "../../components/Header";
 
 export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) => {
 
@@ -70,11 +71,11 @@ export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref)
     }, []);
 
     return (
-        <div ref={ref} className={`dark:border-t dark:border-customPink w-full py-20 space-y-10 flex flex-col items-center dark:bg-customDarkPurple dark:text-customPinkLight dar:border-b bg-customPinkLight text-customPurple overflow-hidden`}>
-            <h1 className="text-4xl font-bold pb-4">My Skills</h1>
+        <div ref={ref} className={`dark:border-t dark:border-customPink w-full py-10 flex flex-col items-center dark:bg-customDarkPurple dark:text-customPinkLight dar:border-b bg-customPinkLight text-customPurple overflow-hidden`}>
+            <Header text="Skills" />
             <div className="flex w-full sm:justify-evenly justify-center text-2xl font-semibold flex-col sm:flex-row space-y-8 sm:space-y-0 sm:space-x-4 sm:px-4 xs:px-8 px-4">
                 <div ref={frontEndRef} className={`p-4 dark:bg-customPurple dark:rounded-md dark:border dark:border-customPink ${inViewFrontEnd ? 'sm:animate-slideInLeft fade-in' : 'opacity-0'} flex flex-col items-center lg:w-1/4 md:w-1/3 sm:w-1/3 sm:mx-0 space-y-10`}>
-                    <div className={`w-full flex flex-col items-center space-y-10 border-b ${darkMode ? 'border-customPink' : 'border-customPurple'} pb-10`}>
+                    <div className={`w-full flex flex-col items-center border-b space-y-10 ${darkMode ? 'border-customPink' : 'border-customPurple'} pb-10`}>
                         <img src={FrontEnd} width={100} alt="front-end" />
                         <p>Front-End</p>
                     </div>

@@ -2,13 +2,14 @@ import { BasicProps } from "../../types/types";
 import { ProjectCard } from "./ProjectCard/ProjectCard";
 import { projects } from "../../data/data";
 import { forwardRef, useState, useRef, useEffect } from "react";
+import { Header } from "../../components/Header";
 
 export const Projects = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) => {
     return (
-        <div ref={ref} className={`dark:border-t dark:border-customPink w-full py-20 space-y-10 flex flex-col items-center 
-            ${darkMode ? 'bg-customDarkPurple text-customPinkLight border-b border-customPink' : 'bg-customPurple text-customPink'} overflow-hidden`}
+        <div ref={ref} className={`dark:border-t dark:border-customPink w-full py-10 flex flex-col items-center 
+            ${darkMode ? 'bg-customDarkPurple text-customPinkLight' : 'bg-customPurple text-customPink'} overflow-hidden`}
         >
-            <h1 className="text-4xl font-bold pb-4">Projects</h1>
+            <Header text="Projects" />
 
             {/* Responsive Grid Layout */}
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 

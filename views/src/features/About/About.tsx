@@ -1,6 +1,7 @@
 import RocklynPic from "../../images/AnticaPic.jpeg";
 import { useState, useRef, useEffect, forwardRef } from 'react';
 import { BasicProps } from "../../types/types";
+import { Header } from "../../components/Header";
 
 
 export const About = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) => {
@@ -37,9 +38,9 @@ export const About = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) 
     return (
         <div
         ref={ref}
-            className={`bg-customPurple dark:bg-customDarkPurple text-customPink w-full py-20 space-y-4 flex flex-col items-center overflow-hidden `}
+            className={`py-10 bg-customPurple dark:bg-customDarkPurple text-customPink w-full flex flex-col items-center overflow-hidden `}
         >
-            <h1 className="text-4xl font-bold pb-4">About Me</h1>
+            <Header text="About Me" />
             <div className="flex flex-col md:flex-row items-center md:space-x-6 justify-center">
                 <div
                     className={`rounded-full shadow-lg object-cover transition-all duration-1000 ${isVisible ? "animate-slideInLeft" : "opacity-0"
@@ -48,7 +49,7 @@ export const About = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) 
                     <img className="w-64 h-64 rounded-full shadow-lg object-cover" src={RocklynPic} />
                 </div>
                 <div
-                    className={`md:w-1/2 mx-4 md:text-left text-center space-y-4 rounded-md p-4 transition-all duration-1000 ${isVisible ? "animate-slideInRight" : "opacity-0"
+                    className={`md:w-1/2 mx-4 md:text-left text-center space-y-4 rounded-md px-4 transition-all duration-1000 ${isVisible ? "animate-slideInRight" : "opacity-0"
                         }`}
                 >
                     <p>
@@ -62,7 +63,7 @@ export const About = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) 
                     </p>
                     <p>
                         In addition to my tech skills, I have been a certified personal trainer for 6
-                        years and have performed as a singer all over the Croatian coast. When I'm
+                        years and have performed as a singer on the Croatian coast. When I'm
                         not coding, you can find me singing and recording song covers at home or
                         lifting weights at the gym.
                     </p>
