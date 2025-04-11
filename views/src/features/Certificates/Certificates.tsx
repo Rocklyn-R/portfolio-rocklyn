@@ -8,10 +8,10 @@ export const Certificates = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }
     return (
         <div
             ref={ref}
-            className={`dark:border-t dark:border-customPink w-full py-10 flex flex-col items-center dark:bg-customDarkPurple dark:text-customPinkLight dark:border-b bg-customPinkLight text-customPurple overflow-hidden`}
+            className={`dark:border-t dark:border-customPink w-full py-10 flex flex-col items-center dark:bg-customDarkPurple dark:text-customPinkLight dark:border-b bg-customPinkLight text-customPurple overflow-hidden px-8`}
         >
             <Header text="Certificates" />
-            <div className="flex w-full justify-evenly flex-wrap space-y-10">
+            <div className="flex w-full justify-evenly flex-wrap gap-y-10 items-center">
                 <img src={FullStackCert} width={600} />
                 <img src={OpenAICert} width={600} />
             </div>
