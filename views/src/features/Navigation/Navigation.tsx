@@ -10,6 +10,7 @@ interface NavigationProps extends DarkModeWithToggleProps {
     aboutRef: React.RefObject<HTMLDivElement>;
     skillsRef: React.RefObject<HTMLDivElement>;
     projectsRef: React.RefObject<HTMLDivElement>;
+    certificatesRef: React.RefObject<HTMLDivElement>;
     contactRef: React.RefObject<HTMLDivElement>;
 }
 
@@ -19,6 +20,7 @@ export const Navigation: React.FC<NavigationProps> = ({
     aboutRef, 
     skillsRef, 
     projectsRef, 
+    certificatesRef,
     contactRef, 
     darkMode, 
     toggleDarkMode
@@ -44,6 +46,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                 <li className="inline-flex hover:underline" onClick={() => onNavClick(aboutRef)}><button>About</button></li>
                 <li className="inline-flex hover:underline" onClick={() => onNavClick(skillsRef)}><button>Skills</button></li>
                 <li className="inline-flex hover:underline" onClick={() => onNavClick(projectsRef)}><button>Projects</button></li>
+                <li className="inline-flex hover:underline" onClick={() => onNavClick(certificatesRef)}><button>Certificates</button></li>
                 <li className="inline-flex hover:underline" onClick={() => onNavClick(contactRef)}><button>Contact</button></li>
             </ul>
 
@@ -70,6 +73,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                     <button onClick={() => onNavClick(aboutRef)}>About</button>
                     <button onClick={() => onNavClick(skillsRef)}>Skills</button>
                     <button onClick={() => onNavClick(projectsRef)}>Projects</button>
+                    <button onClick={() => onNavClick(certificatesRef)}>Certificates</button>
                     <button onClick={() => onNavClick(contactRef)}>Contact</button>
                 </div>
             </div>

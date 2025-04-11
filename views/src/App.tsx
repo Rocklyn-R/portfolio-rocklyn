@@ -10,6 +10,7 @@ import bg1 from "./images/Backgrounds/bg1.jpg"
 import bg2 from "./images/Backgrounds/bg2.jpg";
 import bg3 from "./images/Backgrounds/bg3.jpg";
 import bg4 from "./images/Backgrounds/bg.jpg";
+import { Certificates } from './features/Certificates/Certificates';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -18,6 +19,7 @@ function App() {
   const aboutRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const certificatesRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   const toggleDarkMode = (isChecked: boolean) => {
@@ -28,8 +30,18 @@ function App() {
       document.documentElement.classList.remove('dark'); // Removes the 'dark' class when light mode is selected
     }
   };
+
   const handleScrollTo = (ref: React.RefObject<HTMLDivElement>) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
+    if (ref.current) {
+      const offset = 60; // Adjust this based on your navbar height (e.g., h-16 = 64px)
+      const elementPosition = ref.current.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+  
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (
@@ -44,17 +56,19 @@ function App() {
         aboutRef={aboutRef}
         skillsRef={skillsRef}
         projectsRef={projectsRef}
+        certificatesRef={certificatesRef}
         contactRef={contactRef}
       />
 
       {/* Home Section */}
-      <Home onNavClick={handleScrollTo} ref={homeRef} projectsRef={projectsRef} contactRef={contactRef} />
+      <Home onNavClick={handleScrollTo} homeRef={homeRef} projectsRef={projectsRef} contactRef={contactRef} />
 
 
     {/* Other sections */}
     <About ref={aboutRef} darkMode={darkMode} />
     <Skills ref={skillsRef} darkMode={darkMode} />
     <Projects ref={projectsRef} darkMode={darkMode} />
+    <Certificates ref={certificatesRef} darkMode={darkMode} />
     <Contact ref={contactRef} darkMode={darkMode} />
   </div>
 );
