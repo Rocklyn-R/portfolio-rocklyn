@@ -29,7 +29,8 @@ module.exports = {
         slideInRight: 'slideInRight 1.5s ease-out',
       },
       screens: {
-        xs: {'min-width': '375px'}
+        xs: {'min-width': '375px'},
+        navwidth: {'min-width': '800px'}
       },
       colors: {
         customPurple: '#333159',

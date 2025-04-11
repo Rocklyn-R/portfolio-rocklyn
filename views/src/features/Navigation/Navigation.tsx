@@ -41,7 +41,7 @@ export const Navigation: React.FC<NavigationProps> = ({
             <ToggleDarkMode darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             
             {/* Navigation Links */}
-            <ul className="md:block hidden space-x-16 text-customPink">
+            <ul className="navwidth:block hidden space-x-16 text-customPink">
                 <li className="inline-flex hover:underline" onClick={() => onNavClick(homeRef)}><button>Home</button></li>
                 <li className="inline-flex hover:underline" onClick={() => onNavClick(aboutRef)}><button>About</button></li>
                 <li className="inline-flex hover:underline" onClick={() => onNavClick(skillsRef)}><button>Skills</button></li>
@@ -52,7 +52,7 @@ export const Navigation: React.FC<NavigationProps> = ({
 
             {/* Menu Icon (Hamburger Icon) */}
             <button 
-                className={`md:hidden z-50 block transform transition-transform duration-300 ${isMenuClicked ? 'rotate-180' : '-rotate-180'}`} 
+                className={`navwidth:hidden z-50 block transform transition-transform duration-300 ${isMenuClicked ? 'rotate-180' : '-rotate-180'}`} 
                 onClick={toggleMenu}
             >
                 {isOpen ? <X size={32} /> : <Menu size={32} />}
