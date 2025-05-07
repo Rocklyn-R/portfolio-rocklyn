@@ -71,11 +71,11 @@ export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref)
     }, []);
 
     return (
-        <div ref={ref} className={`dark:border-t dark:border-customPink w-full py-10 flex flex-col items-center dark:bg-customDarkPurple dark:text-customPinkLight dar:border-b bg-customPinkLight text-customPurple overflow-hidden`}>
+        <div ref={ref} className={`border-t border-customPurple dark:border-customPink w-full py-10 flex flex-col items-center dark:bg-customDarkPurple dark:text-customPinkLight dar:border-b bg-customPinkLight text-customDark overflow-hidden`}>
             <Header text="Skills" />
             <div className="flex w-full sm:justify-evenly justify-center text-2xl font-semibold flex-col sm:flex-row space-y-8 sm:space-y-0 sm:space-x-4 sm:px-4 xs:px-8 px-4">
                 <div ref={frontEndRef} className={`p-4 dark:bg-customPurple dark:rounded-md dark:border dark:border-customPink ${inViewFrontEnd ? 'sm:animate-slideInLeft fade-in' : 'opacity-0'} flex flex-col items-center lg:w-1/4 md:w-1/3 sm:w-1/3 sm:mx-0 space-y-10`}>
-                    <div className={`w-full flex flex-col items-center border-b space-y-10 ${darkMode ? 'border-customPink' : 'border-customPurple'} pb-10`}>
+                    <div className={`w-full flex flex-col items-center border-b space-y-10 ${darkMode ? 'border-customPink' : 'border-customDark'} pb-10`}>
                         <img src={FrontEnd} width={100} alt="front-end" />
                         <p>Front-End</p>
                     </div>
@@ -120,7 +120,7 @@ export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref)
                     </div>
                 </div>
                 <div ref={backEndRef} className={`p-4 ${darkMode ? 'bg-customPurple  rounded-md border border-customPink' : ''} ${inViewBackEnd ? 'fade-in' : 'opacity-0'} flex flex-col items-center lg:w-1/4 md:w-1/3 sm:w-1/3 sm:mx-0 space-y-10`}>
-                    <div className={`w-full flex flex-col items-center space-y-10 border-b ${darkMode ? 'border-customPink' : 'border-customPurple'} pb-10`}>
+                    <div className={`w-full flex flex-col items-center space-y-10 border-b ${darkMode ? 'border-customPink' : 'border-customDark'} pb-10`}>
                         <img src={BackEnd} width={100} alt="back-end" />
                         <p>Back-End</p>
                     </div>
@@ -143,7 +143,7 @@ export const Skills = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref)
                     </div>
                 </div>
                 <div ref={toolsRef} className={`p-4 ${darkMode ? 'bg-customPurple rounded-md border border-customPink' : ''} ${inViewTools ? 'sm:animate-slideInRight fade-in' : 'opacity-0'} flex flex-col items-center lg:w-1/4 md:w-1/3 sm:w-1/3 sm:mx-0  space-y-10`}>
-                    <div className={`w-full flex flex-col items-center space-y-10 border-b ${darkMode ? 'border-customPink' : 'border-customPurple'} pb-10`}>
+                    <div className={`w-full flex flex-col items-center space-y-10 border-b ${darkMode ? 'border-customPink' : 'border-customDark'} pb-10`}>
                         <img src={Tools} width={100} alt="tools" />
                         <p>Tools</p>
                     </div>

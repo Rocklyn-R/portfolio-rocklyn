@@ -85,6 +85,18 @@ export const techIcons = [
 
 export const projects: Project[] = [
     {
+        src: LiftLog,
+        name: 'Lift Log',
+        title: 'Strength Training Tracker',
+        description: 'Lift Log is a strength training gym application that allows users to log their workouts and track their personal records. It also features a timer and stopwatch',
+        techIcons: [
+            techIcons[7], techIcons[1], techIcons[2], techIcons[8], techIcons[4], techIcons[5], techIcons[6], techIcons[10]
+        ],
+        demo: true,
+        liveDemo: 'https://lift-log.onrender.com/',
+        sourceCode: 'https://github.com/Rocklyn-R/lift-log'
+    },
+    {
         src: RhythmRealm,
         name: 'Rhythm Realm',
         title: 'E-Commerce Website for Musical Instruments',
@@ -108,18 +120,6 @@ export const projects: Project[] = [
         demo: true,
         liveDemo: 'https://task-master-rocklyn.onrender.com/',
         sourceCode: 'https://github.com/Rocklyn-R/gamified-productivity-app'
-    },
-    {
-        src: LiftLog,
-        name: 'Lift Log',
-        title: 'Strength Training Tracker',
-        description: 'Lift Log is a strength training gym application that allows users to log their workouts and track their personal records. It also features a timer and stopwatch',
-        techIcons: [
-            techIcons[7], techIcons[1], techIcons[2], techIcons[8], techIcons[4], techIcons[5], techIcons[6], techIcons[10]
-        ],
-        demo: true,
-        liveDemo: 'https://lift-log.onrender.com/',
-        sourceCode: 'https://github.com/Rocklyn-R/lift-log'
     },
     {
         src: RedditLite,

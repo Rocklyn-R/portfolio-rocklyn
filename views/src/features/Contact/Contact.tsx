@@ -78,7 +78,7 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
 
 
     return (
-        <div ref={ref} className={`w-full py-10 flex flex-col items-center ${darkMode ? 'bg-customDarkPurple text-customPinkLight' : 'bg-customPurple text-customPink'} overflow-hidden`}>
+        <div ref={ref} className={`w-full py-10 flex flex-col items-center ${darkMode ? 'bg-customDarkPurple text-customPinkLight' : 'bg-customPurple text-customDark'} overflow-hidden`}>
             <Header text="Contact" />
             <div className="flex items-center justify-evenly flex-wrap gap-y-4 w-full lg:w-3/4 ">
                 <div>
@@ -112,8 +112,8 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
             </div>
             <div className="w-full flex flex-col items-center justify-center xs:px-4 px-1 pt-10">
 
-                    <form onSubmit={handleSubmitContactForm} className="w-full max-w-lg p-8 dark:border dark:border-customPink bg-customPinkLight dark:bg-customPurple rounded-lg shadow-md">
-                        <h4 className="text-customPurple dark:text-customPinkLight text-2xl mb-6 font-bold text-center">
+                    <form onSubmit={handleSubmitContactForm} className="w-full max-w-lg p-8 border border-customDark dark:border-customPink bg-customPinkLight dark:bg-customPurple rounded-lg shadow-md">
+                        <h4 className="text-customDark dark:text-customPinkLight text-2xl mb-6 font-bold text-center">
                             Send Me a Message:
                         </h4>
 

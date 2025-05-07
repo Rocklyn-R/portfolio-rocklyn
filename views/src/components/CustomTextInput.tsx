@@ -35,7 +35,7 @@ export const CustomTextInput: React.FC<CustomTextInputProps> = ({ validateFuncti
         name={name}
         value={value}
         onChange={handleChange}
-        className={`${className} text-customPurple mt-2 p-2 border-2 border-customPurple focus:outline-none rounded-md`}
+        className={`${className} text-customDark mt-2 p-2 border border-customDark focus:outline-none rounded-md`}
         required={required}
       />
     </div>

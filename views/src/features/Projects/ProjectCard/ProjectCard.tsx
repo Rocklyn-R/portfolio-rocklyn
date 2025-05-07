@@ -44,7 +44,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ index, project, darkMo
 
     return (
         <div key={index} ref={projectRef}
-            className={`${animationClass} flex flex-col w-full justify-center items-center dark:border dark:border-customPink dark:bg-customPurple dark:text-customPinkLight bg-customPinkLight text-customPurple rounded-md`}>
+            className={`${animationClass} flex flex-col w-full justify-center items-center border border-customDark dark:border-customPink dark:bg-customPurple dark:text-customPinkLight bg-customPinkLight text-customDark rounded-md`}>
             <img src={project.src} width={400} className="w-full rounded-t-md" />
             <div className="px-4 space-y-2 flex-grow py-2">
                 <h3 className="text-3xl font-bold">{project.name}</h3>
@@ -63,7 +63,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ index, project, darkMo
                 </div>
                 {project.demo && (
                     <div className="">
-                        <h4 className={`text-xl font-semibold border-b ${darkMode ? 'border-customPink' : 'border-customPurple'} pb-2`}>Demo Account</h4>
+                        <h4 className={`text-xl font-semibold border-b ${darkMode ? 'border-customPink' : 'border-customDark'} pb-2`}>Demo Account</h4>
                         <p className="mt-2"><span className="font-semibold">Username:</span> demo@example.com</p>
                         <p className="mt-1"><span className="font-semibold">Password:</span> demo123</p>
                     </div>
@@ -75,13 +75,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ index, project, darkMo
                     href={project.liveDemo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`rounded-md cursor-pointer px-3 py-2 ${darkMode ? 'border-customPink hover:bg-customDarkPurple' : 'hover:bg-customPinkMedium border-customPurpleLight text-customPurple'} border hover-scale`}
+                    className={`rounded-md cursor-pointer px-3 py-2 ${darkMode ? 'border-customPink hover:bg-customDarkPurple' : 'hover:bg-customPurple border-customDark text-customDark bg-customPinkLight'} border hover-scale`}
                 >Live Demo</a>
                 <a
                     href={project.sourceCode}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`rounded-md cursor-pointer px-3 py-2  ${darkMode ? 'border border-customPink hover:bg-customDarkPurple' : 'hover:bg-customPurple bg-customPurpleLight'} text-customPinkLight hover-scale`}
+                    className={`rounded-md cursor-pointer px-3 py-2  ${darkMode ? 'border border-customPink hover:bg-customDarkPurple' : 'hover:bg-customDark bg-customDarkAccent'} text-customPinkLight hover-scale`}
                 >Source Code</a>
             </div>
 

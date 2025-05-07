@@ -35,7 +35,7 @@ export const CustomTextArea: React.FC<CustomTextAreaProps> = ({
                 value={value}
                 onChange={handleChange}
                 maxLength={maxLength}
-                className={`${className} resize-y min-h-[6rem] max-h-[11.9rem] text-customPurple mt-2 p-2 border-2 border-customPurple focus:outline-none rounded-md`}
+                className={`${className} resize-y min-h-[6rem] max-h-[11.9rem] text-customDark mt-2 p-2 border border-customDark focus:outline-none rounded-md`}
                 required={required}
                 rows={3} // Default rows for a good height
             />

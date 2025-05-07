@@ -68,7 +68,7 @@ export const Home = forwardRef<HTMLDivElement, HomeProps>(({ onNavClick, project
     return (
         <div
             ref={homeRef}
-            className={`pt-10 bg-customPinkLight dark:bg-customDarkPurple w-full h-screen flex items-center justify-center overflow-hidden dark:text-customPinkLight dark:border-b dark:border-customPink text-customPurple`}>
+            className={`pt-10 bg-customPinkLight dark:bg-customDarkPurple w-full h-screen flex items-center justify-center overflow-hidden dark:text-customPinkLight border-b border-customPurple dark:border-customPink text-customDark`}>
 
             <div className="flex flex-col items-center  w-full justify-center">
 
@@ -78,7 +78,6 @@ export const Home = forwardRef<HTMLDivElement, HomeProps>(({ onNavClick, project
                         alt="Antica Rocklyn"
                         className="rounded-full shadow-lg object-cover w-3/4 sm:w-[330px] max-w-[330px] h-auto"
                     />
-
                 </div>
                 <div className="text-center flex flex-col space-y-4 mt-4">
                     <h1 className="sm:text-6xl xs:text-5xl text-4xl font-bold">
@@ -103,14 +102,14 @@ export const Home = forwardRef<HTMLDivElement, HomeProps>(({ onNavClick, project
 
                         <button
                             onClick={() => onNavClick(projectsRef)}
-                            className={`px-3 py-2 w-28 dark:border dark:border-customPink dark:hover:bg-customPurple hover:bg-customPinkMedium border-customPurpleLight rounded-md border hover-scale`}
+                            className={`px-3 py-2 w-28 dark:border dark:border-customPink dark:hover:bg-customPurple hover:bg-customPurple border-customDark bg-customPinkLight rounded-md border hover-scale`}
                         >
                             Projects
                         </button>
 
                         <button
                             onClick={() => onNavClick(contactRef)}
-                            className={`px-3 py-2 w-28 dark:border dark:border-customPink dark:bg-customDarkPurple dark:hover:bg-customPurple hover:bg-customPurple bg-customPurpleLight rounded-md text-customPinkLight hover-scale`}
+                            className={`px-3 py-2 w-28 dark:border dark:border-customPink dark:bg-customDarkPurple dark:hover:bg-customPurple hover:bg-customDark bg-customDarkAccent rounded-md text-customPinkLight hover-scale`}
                         >
                             Hire Me
                         </button>

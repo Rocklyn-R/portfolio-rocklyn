@@ -7,7 +7,7 @@ import { Header } from "../../components/Header";
 export const Projects = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) => {
     return (
         <div ref={ref} className={`dark:border-t dark:border-customPink w-full py-10 flex flex-col items-center 
-            ${darkMode ? 'bg-customDarkPurple text-customPinkLight' : 'bg-customPurple text-customPink'} overflow-hidden`}
+            ${darkMode ? 'bg-customDarkPurple text-customPinkLight' : 'bg-customPurple text-customDark'} overflow-hidden`}
         >
             <Header text="Projects" />
 

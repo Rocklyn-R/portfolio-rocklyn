@@ -37,7 +37,7 @@ export const Navigation: React.FC<NavigationProps> = ({
     };
 
     return (
-        <nav className={`bg-customPurple dark:border-b dark:border-customPink dark:bg-customDarkPurple flex py-4 justify-between items-center min-w-full fixed z-50 px-10 text-customPink`} id="nav">
+        <nav className={`bg-customDark dark:border-b dark:border-customPink dark:bg-customDarkPurple flex py-4 justify-between items-center min-w-full fixed z-50 px-10 text-customPink`} id="nav">
             <ToggleDarkMode darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             
             {/* Navigation Links */}

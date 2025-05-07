@@ -108,7 +108,7 @@ function App() {
             });
           }}
 
-          className={`fixed bottom-4 right-4 z-50 p-3 rounded-full bg-customPurpleLight text-customPinkLight shadow-xl hover:bg-customPurple transition`}
+          className={`fixed bottom-4 right-4 z-50 p-3 rounded-full bg-customDark text-customPinkLight shadow-xl hover:bg-customDarkAccent transition`}
         >
           {atBottom ? (
             <ChevronUp />
