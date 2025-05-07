@@ -44,7 +44,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ index, project, darkMo
 
     return (
         <div key={index} ref={projectRef}
-            className={`${animationClass} flex flex-col w-full justify-center items-center border border-customDark dark:border-customPink dark:bg-customPurple dark:text-customPinkLight bg-customPinkLight text-customDark rounded-md`}>
+            className={`${animationClass} flex flex-col w-full justify-center items-center border border-customDark dark:border-customPink dark:bg-customDarkPurple dark:text-customPinkLight bg-customPinkLight text-customDark rounded-md`}>
             <img src={project.src} width={400} className="w-full rounded-t-md" />
             <div className="px-4 space-y-2 flex-grow py-2">
                 <h3 className="text-3xl font-bold">{project.name}</h3>

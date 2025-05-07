@@ -9,7 +9,7 @@ interface SocialMediaProps extends DarkModeProps {
 
 export const SocialMedia: React.FC<SocialMediaProps> = ({ href, src, name, phrase, darkMode }) => {
     return (
-        <a href={href} target="_blank" rel="noopener noreferrer" className={`dark:border dark:border-customPink cursor-pointer flex px-6 w-[17rem] py-3 space-x-4 border border-customDark rounded-md ${darkMode ? 'bg-customPurple text-customPinkLight' : 'bg-customPinkLight text-customDark'} shadow-lg`}>
+        <a href={href} target="_blank" rel="noopener noreferrer" className={`dark:border dark:border-customPink cursor-pointer flex px-6 w-[17rem] py-3 space-x-4 border border-customDark rounded-md ${darkMode ? 'bg-customDarkPurple text-customPinkLight' : 'bg-customPinkLight text-customDark'} shadow-lg`}>
                <img src={src} width={50} /> 
             <div>
                 <h4 className="font-bold text-2xl">{name}</h4>

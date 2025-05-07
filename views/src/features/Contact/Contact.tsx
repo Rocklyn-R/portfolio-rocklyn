@@ -112,7 +112,7 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
             </div>
             <div className="w-full flex flex-col items-center justify-center xs:px-4 px-1 pt-10">
 
-                    <form onSubmit={handleSubmitContactForm} className="w-full max-w-lg p-8 border border-customDark dark:border-customPink bg-customPinkLight dark:bg-customPurple rounded-lg shadow-md">
+                    <form onSubmit={handleSubmitContactForm} className="w-full max-w-lg p-8 border border-customDark dark:border-customPink bg-customPinkLight dark:bg-customDarkPurple rounded-lg shadow-md">
                         <h4 className="text-customDark dark:text-customPinkLight text-2xl mb-6 font-bold text-center">
                             Send Me a Message:
                         </h4>
