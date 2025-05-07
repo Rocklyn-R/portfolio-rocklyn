@@ -68,7 +68,7 @@ export const Navigation: React.FC<NavigationProps> = ({
             
                 </div>
                 {/* Here you can add menu items, links, or anything you want inside the overlay */}
-                <div className="dark:bg-customDarkPurple bg-customPurple flex flex-col items-center justify-center h-full text-customPink space-y-4">
+                <div className="dark:bg-customDarkPurple bg-customDark flex flex-col items-center justify-center h-full text-customPink space-y-4">
                     <button onClick={() => onNavClick(homeRef)}>Home</button>
                     <button onClick={() => onNavClick(aboutRef)}>About</button>
                     <button onClick={() => onNavClick(skillsRef)}>Skills</button>
