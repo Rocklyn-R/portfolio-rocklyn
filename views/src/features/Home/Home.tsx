@@ -68,7 +68,7 @@ export const Home = forwardRef<HTMLDivElement, HomeProps>(({ onNavClick, project
     return (
         <div
             ref={homeRef}
-            className={`pt-10 bg-customPinkLight dark:bg-customDarkPurple w-full h-screen flex items-center justify-center overflow-hidden dark:text-customPurple border-b border-customPurple dark:border-customPink text-customDark`}>
+            className={`pt-10 bg-customPinkLight dark:bg-customDarkBlue w-full h-screen flex items-center justify-center overflow-hidden dark:text-customPurple border-b border-customPurple dark:border-customPink text-customDark`}>
 
             <div className="flex flex-col items-center  w-full justify-center">
 

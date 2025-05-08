@@ -37,7 +37,7 @@ export const Navigation: React.FC<NavigationProps> = ({
     };
 
     return (
-        <nav className={`bg-customDark dark:border-b dark:border-customPink dark:bg-customDarkPurple flex py-4 justify-between items-center min-w-full fixed z-50 px-10 text-customPink`} id="nav">
+        <nav className={`bg-customDark dark:border-b dark:border-customPink dark:bg-customDarkBlue flex py-4 justify-between items-center min-w-full fixed z-50 px-10 text-customPink`} id="nav">
             <ToggleDarkMode darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             
             {/* Navigation Links */}
@@ -60,7 +60,7 @@ export const Navigation: React.FC<NavigationProps> = ({
 
             {/* Overlay (Initially Hidden, Shows When Menu is Open) */}
             <div 
-                className={`fixed -top-5 right-0 w-full h-full transition-all duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`fixed -top-7 right-0 w-full h-full transition-all duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 onClick={toggleMenu} // Close the overlay when clicked
             >
                 <div className="flex justify-end p-4">
@@ -68,7 +68,7 @@ export const Navigation: React.FC<NavigationProps> = ({
             
                 </div>
                 {/* Here you can add menu items, links, or anything you want inside the overlay */}
-                <div className="dark:bg-customDarkPurple bg-customDark flex flex-col items-center justify-center h-full text-customPink space-y-4">
+                <div className="dark:bg-customDarkBlue bg-customDark flex flex-col items-center justify-center h-full text-customPink space-y-4 z-50">
                     <button onClick={() => onNavClick(homeRef)}>Home</button>
                     <button onClick={() => onNavClick(aboutRef)}>About</button>
                     <button onClick={() => onNavClick(skillsRef)}>Skills</button>

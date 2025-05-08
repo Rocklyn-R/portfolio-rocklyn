@@ -78,7 +78,7 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
 
 
     return (
-        <div ref={ref} className={`w-full py-10 flex flex-col items-center ${darkMode ? 'bg-customDarkPurple text-customPinkLight' : 'bg-customPurple text-customDark'} overflow-hidden`}>
+        <div ref={ref} className={`w-full py-10 flex flex-col items-center ${darkMode ? 'bg-customDarkBlue text-customPinkLight' : 'bg-customPurple text-customDark'} overflow-hidden`}>
             <Header text="Contact" />
             <div className="flex items-center justify-evenly flex-wrap gap-y-4 w-full lg:w-3/4 ">
                 <div>
@@ -166,7 +166,7 @@ export const Contact = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref
 
                         <div className="mt-6 text-center w-full flex justify-center">
                             <button
-                                className="w-fit text-lg border border-customPinkLight flex justify-center px-3 py-2 bg-customPurpleLight dark:hover:bg-customDarkPurple dark:bg-customPurple text-customPinkLight font-semibold rounded-md hover:bg-customPurple transition duration-300 hover-scale"
+                                className="w-fit text-lg border border-customPinkLight flex justify-center px-3 py-2 bg-customDarkAccent dark:hover:bg-customDark dark:bg-customDarkAccent text-customPinkLight font-semibold rounded-md hover:bg-customDark transition duration-300 hover-scale"
                                 type="submit"
                             >
                                {loading ? <Loading size="w-6 h-6" /> : "Submit"}

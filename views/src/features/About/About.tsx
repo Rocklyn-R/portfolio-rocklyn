@@ -38,7 +38,7 @@ export const About = forwardRef<HTMLDivElement, BasicProps>(({ darkMode }, ref) 
     return (
         <div
         ref={ref}
-            className={`py-10 bg-customPurple dark:text-customPurple dark:bg-customDarkPurple text-customDark w-full flex flex-col items-center overflow-hidden `}
+            className={`py-10 bg-customPurple dark:text-customPurple dark:bg-customDarkBlue text-customDark w-full flex flex-col items-center overflow-hidden `}
         >
             <Header text="About Me" />
             <div className="flex flex-col md:flex-row items-center md:space-x-6 justify-center">
